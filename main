@@ -1,0 +1,46 @@
+decisions = 0
+p1Points = 0
+p2Points = 0
+print("Prisoner's Dilemma: \n You and your friend were arrested for a heist you committed. \n The police know you did it, but they have no real evidence. These are the rules: ")
+print("You will be jailed for two years, but if you confess about your friend then you will face one year and your friend five years.")
+print("If you both confess, you both face five years.")
+print("If neither confesses, you both face three years.")
+while decisions <= 3:
+    p1 = input("Prisoner 1, Do you want to confess [1] or cooperate [2]?")
+    for i in range (20):
+        print ("###########")
+    p2 = input("Prisoner 2, Do you want to confess [1] or cooperate [2]?")
+    for i in range (20):
+        print ("###########")
+    if p1 == ("1") and p2 == ("1"):
+        print("Prisoner 1 and Prisoner 2 betray")
+        p1Points += 5
+        p2Points += 5
+        decisions += 1
+        print ("this is round", decisions)
+    elif p1 == ("1") and p2 == ("2"):
+        print("Prisoner 1 betrayed and Prisoner 2 cooperated")
+        p1Points += 1
+        p2Points += 5
+        decisions += 1
+        print("this is round", decisions)
+    elif p1 == ("2") and p2 == ("1"):
+        print("Prisoner 1 cooperated and Prisoner 2 betrayed")
+        p1Points += 5
+        p2Points += 1
+        decisions += 1
+        print("this is round", decisions)
+    elif p1 == ("2") and p2 == ("2"):
+        print("Prisoner 1 and Prisoner 2 cooperated")
+        p1Points += 2
+        p2Points += 2
+        decisions += 1
+        print("this is round", decisions)
+    else:
+        print ("invalid option")
+        #p1 = input("Prisoner 1, Do you want to confess [1] or cooperate [2]?")
+        #p2 = input("Prisoner 2, Do you want to confess [1] or cooperate [2]?")
+
+print("Prisoner 1 years:", p1Points)
+print("Prisoner 2 years:", p2Points)
+print("Total Years:", p1Points+p2Points)
